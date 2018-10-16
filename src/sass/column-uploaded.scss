@@ -1,0 +1,26 @@
+@import "vars";
+
+.picotune[data-displaycolumn^="display-"] > .content > .column > .uploaded {
+	display: none;
+}
+
+.picotune > .content > .column > .uploaded {
+	.header {
+
+	}
+	
+	.content {
+
+		.header {
+			@include column-header();
+		}
+		.pickup {
+			
+		}
+		.latest {
+			.songList {
+				@include load-display();
+			}
+		}
+	}
+}

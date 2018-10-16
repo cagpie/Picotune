@@ -1,0 +1,89 @@
+.picotune > .content > .song > .info {
+	height: calc(100% - 414px);
+	padding: 12px 18px;
+	overflow-y: auto;
+
+	&> div {
+		display: flex;
+
+		&> div + div {
+			margin-left: 10px;
+		}
+	}
+
+	.composer {
+		font-weight: 700;
+
+		&::before {
+			content: '≡';
+		}
+	}
+
+	.name {
+		font-size: larger;
+		font-weight: 500;
+	}
+
+	.localSongSetting {
+		display: none;
+		height: 100%;
+		margin: 10px;
+	}
+
+	.footer {
+		color: #888;
+		font-size: smaller;
+	}
+
+	.composer,
+	.uploadDate,
+	.songName,
+	.songDetail,
+	.localSongSetting,
+	.link,
+	.license,
+	.tweet,
+	.download,
+	.edit,
+	.delete {
+		display: none;
+	}
+}
+
+.picotune[data-displayinfo="display-uploaded"] > .content > .song > .info {
+	.composer,
+	.uploadDate,
+	.songName,
+	.songDetail,
+	.link,
+	.license,
+	.tweet,
+	.download,
+	.edit,
+	.delete {
+		display: block;
+	}
+	.localSongSetting,
+	.welcome {
+		display: none;
+	}
+}
+
+.picotune[data-displayinfo="display-local"] > .content > .song > .info {
+	.composer,
+	.uploadDate,
+	.songDetail,
+	.link,
+	.license,
+	.tweet,
+	.download,
+	.edit,
+	.delete,
+	.welcome {
+		display: none;
+	}
+	.songName,
+	.localSongSetting {
+		display: block;
+	}
+}

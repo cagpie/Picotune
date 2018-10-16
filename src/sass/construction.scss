@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	font-family:
+		Hiragino Sans,
+		"ヒラギノ角ゴシック",
+		Hiragino Kaku Gothic ProN,
+		"ヒラギノ角ゴ ProN W3",
+		Roboto,
+		"Droid Sans",
+		YuGothic,
+		"游ゴシック",
+		Meiryo,
+		"メイリオ",
+		Verdana,
+		"ＭＳ Ｐゴシック",
+		sans-serif;
+}
+
+
+.picotune {
+	width: 100%;
+	height: 100vh;
+	background-color: #ddd;
+
+	.template {
+		display: none;
+	}
+}

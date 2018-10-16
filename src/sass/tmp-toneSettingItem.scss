@@ -1,0 +1,9 @@
+.picotune .toneSettingItem {
+	& > .channel {
+		display: inline-block;
+		width: 4em;
+		padding: 2px;
+		line-height: 1em;
+		color: #fff;
+	}
+}

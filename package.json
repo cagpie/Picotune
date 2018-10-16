@@ -1,0 +1,30 @@
+{
+  "name": "picotune",
+  "version": "1.0.0",
+  "description": ".",
+  "main": "./src/script/index.js",
+  "author": "cagpie",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "del": "^2.2.2",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-webpack": "^1.5.0",
+    "webpack": "^4.29.6"
+  },
+  "scripts": {
+    "start": "npm install && npm run build",
+    "build": "gulp",
+    "production": "gulp production",
+    "sass": "gulp sass",
+    "minify": "gulp minify"
+  }
+}

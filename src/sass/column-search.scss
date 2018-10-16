@@ -1,0 +1,26 @@
+@import "vars";
+
+.picotune > .content > .column > .search {
+	display: none;
+}
+
+.picotune[data-displaycolumn="display-search"] > .content > .column > .search {
+	display: block;
+
+	.header {
+		@include column-header();
+		cursor: pointer;
+		.backButton {
+			@include back-button();
+		}
+	}
+	
+	.content {
+		.util {
+			overflow: hidden;
+		}
+		.songList {
+			@include load-display();
+		}
+	}
+}

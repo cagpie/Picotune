@@ -1,0 +1,21 @@
+.picotune > .content {
+	display: flex;
+	width: 100%;
+	height: calc(100% - 36px);
+	max-width: 900px;
+	margin: auto;
+	background-color: #fff;
+
+	.song {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 620px;
+	}
+
+	.column {
+		width: 100%;
+		max-width: 280px;
+		overflow-y: scroll;
+	}
+}

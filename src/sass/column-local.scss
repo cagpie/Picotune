@@ -1,0 +1,23 @@
+@import "vars";
+
+.picotune > .content > .column > .local {
+	display: none;
+}
+
+.picotune[data-displaycolumn="display-local"] > .content > .column > .local {
+	display: block;
+
+	.header {
+		@include column-header();
+		cursor: pointer;
+		.backButton {
+			@include back-button();
+		}
+	}
+	
+	.content {
+		.util {
+			overflow: hidden;
+		}
+	}
+}

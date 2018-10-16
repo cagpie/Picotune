@@ -1,0 +1,20 @@
+.picotune .localSongItem {
+	cursor: pointer;
+	font-size: 90%;
+	transition: border-width 0.1s;
+	border-style: solid;
+	border-color: #cd8;
+	border-width: 0px;
+
+	&:hover {
+		border-left-width: 5px;
+	}
+
+	& > .songName {
+		padding: 5px;
+	}
+
+	& + .localSongItem {
+		border-top: 1px solid #ccc;
+	}
+}

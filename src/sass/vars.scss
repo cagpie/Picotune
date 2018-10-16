@@ -1,0 +1,64 @@
+@mixin column-header () {
+	position: sticky;
+	top: 0;
+	text-align: center;
+	font-size: 110%;
+	background-image: linear-gradient(
+		-45deg,
+		#fdd 25%,
+		#fff 25%,
+		#fff 50%,
+		#fdd 50%,
+		#fdd 75%,
+		#fff 75%,
+		#fff
+	);
+	background-size: 15px 15px;
+	background-attachment: fixed;
+}
+
+@mixin back-button () {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin-top: 2px;
+	margin-left: 15px;
+	text-align: center;
+	&::before {
+		content: "";
+		position:absolute;
+		width: 10px;
+		height: 10px;
+		margin-left: 4px;
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+		transform-origin: -6px 0px;
+		transform: rotate(45deg);
+	}
+}
+
+@mixin load-display () {
+	&::after {
+		content: "";
+		display: none;
+		color: #888;
+		font-size: smaller;
+		text-align: center;
+	}
+
+	&[data-load="loading"] {
+		&::after {
+			content: "読み込み中";
+			display: block;
+		}
+	}
+	&[data-load="loadedall"] {
+		&::after {
+			content: "全て読み込みました";
+			display: block;
+		}
+	}
+}

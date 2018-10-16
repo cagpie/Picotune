@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Picotune</title>
+<link href="./dist/picotune.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="picotune" class="picotune">
+		<div class="header">
+			<div class="wrapper">
+				<div class="logo"></div>
+				<div class="menu">
+					<div class="search">
+						<form>
+							<input class="searchInput" type="search" placeholder="Search"/>
+							<input class="searchSubmit" type="submit" value="">
+						</form>
+					</div>
+					<div class="local">Local</div>
+					<div class="upload">Upload</div>
+					<div class="info">Info</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="song">
+				<div class="player">
+					<canvas class="display" width="620" height="384"></canvas>
+					<div class="control">
+						<div>
+							<input class="logo" type="button"/>
+						</div>
+						<div>
+							<input class="random" type="button"/>
+							<input class="loop" type="button"/>
+							<input class="prev" type="button"/>
+							<input class="play" type="button"/>
+							<input class="next" type="button"/>
+							<input class="like" type="button"/>
+							<div class="volume">
+								<input class="mute" type="button"/>
+								<div class="knob">
+									<div class="holder">
+										<div class="current"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<input class="setting" type="button"/>
+						</div>
+					</div>
+				</div>
+				<div class="info">
+					<div>
+						<div class="composer"></div>
+						<div class="uploadDate"></div>
+					</div>
+					<div>
+						<div class="songName"></div>
+					</div>
+					<div>
+						<div class="songDetail"></div>
+					</div>
+					<div>
+						<div class="localSongSetting"></div>
+					</div>
+					<div>
+						<div class="link">license</div>
+					</div>
+					<div>
+						<div class="license"></div>
+						<div class="tweet"></div>
+						<div class="download">Download</div>
+						<div class="edit">Edit</div>
+						<div class="delete">Delete</div>
+					</div>
+					<div>
+						<div class="welcome">
+							ようこそPicotuneへ！
+						</div>
+					</div>
+					<div>
+						<div class="footer">
+							<div class="discription">PicotuneはWeb上でMIDIを再生するアプリです</div>
+							<div class="language">LANGUAGE - JPN ENG</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="uploaded">
+					<div class="header"></div>
+					<div class="content">
+						<div class="pickup">
+							<div class="header">PickUp!</div>
+							<div class="songList" data-dummy="3"></div>
+						</div>
+						<div class="latest">
+							<div class="header">Latest</div>
+							<div class="songList" data-dummy="40"></div>
+						</div>
+					</div>
+				</div>
+				<div class="search">
+						<div class="header">
+							<div class="backButton"></div>
+							<span>Search: <span class="searchWord"></span>
+						</div>
+						<div class="content">
+							<div class="songList"></div>
+						</div>
+					</div>
+				<div class="local">
+					<div class="header">
+						<div class="backButton"></div>
+						<span>Local Songs</span>
+					</div>
+					<div class="content">
+						<div class="util">
+							<input class="inputfile" type="file" accept="audio/mid,audio/midi"/>
+						</div>
+						<div class="songList"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="template">
+			<div class="uploadedSongItem">
+				<div class="composer">------</div>
+				<div class="uploadedDate">0000.00.00 00:00</div>
+				<div class="songName">-------------</div>
+			</div>
+			<div class="localSongItem">
+				<div class="songName"></div>
+			</div>
+			<div class="toneSettingItem">
+				<div class="channel"></div>
+				<select class="wave">
+					<option value="0">(Wave)</option>
+					<option value="1">Sine</option>
+					<option value="2">Square</option>
+					<option value="3">Sawtooth</option>
+					<option value="4">Triangle</option>
+				</select>
+				<select class="attenuation">
+					<option value="0">(Attenuation)</option>
+					<option value="1">Massugu</option>
+					<option value="2">Pizzicart</option>
+					<option value="3">Pianic</option>
+					<option value="4">Guiterly</option>
+					<option value="5">e-Pianic</option>
+				</select>
+				<select class="volume">
+				</select>
+			</div>
+		</div>
+	</div>
+<script>
+	const template = document.getElementsByClassName('uploadedSongItem')[0].cloneNode(true);
+	template.style.color = '#ddd';
+	Array.from(document.getElementsByClassName('songList')).forEach((songList)=> {
+		for (let i=0; i<(songList.getAttribute('data-dummy') || 0); i++) {
+			songList.appendChild(template.cloneNode(true));
+		}
+	});
+</script>
+<script src="./dist/picotune.js"></script>
+</body>
+</html>
