@@ -10,7 +10,7 @@ var sass = require('gulp-sass');
 var webpackConfig = require('./webpack.config.js');
 
 gulp.task('clean', function() {
-  return del.sync(['dist']);
+  return del(['dist']);
 });
 
 gulp.task('build', function() {
@@ -56,10 +56,10 @@ gulp.task('css-minify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['./src/script/**/*.js'], ['build']);
-  gulp.watch(['./src/sass/**/*.scss'], ['sass']);
+  gulp.watch(['./src/script/**/*.js'], gulp.task('build'));
+  gulp.watch(['./src/sass/**/*.scss'], gulp.task('sass'));
 });
 
-gulp.task('default', ['clean', 'build', 'sass', 'watch']);
-gulp.task('minify', ['js-minify', 'css-minify']);
-gulp.task('production', ['clean', 'build', 'sass', 'minify']);
+gulp.task('default', gulp.series('clean', 'build', 'sass', 'watch'));
+gulp.task('minify',  gulp.series('js-minify', 'css-minify'));
+gulp.task('production',  gulp.series('clean', 'build', 'sass', 'minify'));

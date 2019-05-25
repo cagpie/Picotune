@@ -34,7 +34,7 @@ function cloneSongItem (song) {
 }
 
 export default function setup () {
-	const inputFile = picotune.content.column.local.content.util.inputfile;
+	const inputFile = picotune.content.column.local.content.util.inputFileLabel.inputFile;
 
 	// 参照する際の曲の読み込み
 	inputFile.onchange = ()=> {

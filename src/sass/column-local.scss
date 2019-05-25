@@ -18,6 +18,21 @@
 	.content {
 		.util {
 			overflow: hidden;
+			.inputFileLabel {
+				cursor: pointer;
+				display: block;
+				text-align: center;
+				border-radius: 1em;
+				border: 3px dotted #f00;
+				margin: 0.5em;
+
+				.inputFileLabelText {
+					padding: 0.5em;
+				}
+				.inputFile {
+					display: none;
+				}
+			}
 		}
 	}
 }

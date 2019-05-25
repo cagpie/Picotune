@@ -13,17 +13,17 @@
 
 	& > .composer {
 		display: inline-block;
-		margin: 5px 0 0 5px;
+		padding: 5px 0 0 5px;
 	}
 
 	& > .uploadedDate {
 		display: inline-block;
-		margin: 5px 5px 0 5px;
+		padding: 5px 5px 0 5px;
 		font-size: smaller;
 	}
 
 	& > .songName {
-		margin: 0 5px 5px 5px;
+		padding: 0 5px 5px 5px;
 		font-weight: bolder;
 	}
 
