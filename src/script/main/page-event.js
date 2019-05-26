@@ -21,6 +21,10 @@ export default function setup () {
 
 	// header -  local
 	header.local.addEventListener('click', ()=> {
+		if (picotune.getAttribute('data-displaycolumn') === 'display-local') {
+			picotune.setAttribute('data-displaycolumn', '');
+			return;
+		}
 		picotune.setAttribute('data-displaycolumn', 'display-local');
 	});
 

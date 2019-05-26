@@ -117,6 +117,9 @@ export default function setup () {
 	});
 
 	play.addEventListener('click', ()=> {
+		if (!pAudio.isStarted) {
+			return;
+		}
 		_play();
 	});
 
@@ -161,6 +164,10 @@ export default function setup () {
 	let _clickedMouseX = 0;
 
 	function _actCanvas (e) {
+		if (!pAudio.isStarted) {
+			return;
+		}
+
 		display.mouse = {
 			x: e.clientX-display.offsetLeft,
 			y: e.clientY-display.offsetTop+window.scrollY
